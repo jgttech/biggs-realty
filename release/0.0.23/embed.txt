@@ -1,1 +1,0 @@
-<script type='module' src='https://rawcdn.githack.com/jgttech/br-skunkworks-chat/0.0.23/apps/chatbot-embed/dist/index.js'></script>
