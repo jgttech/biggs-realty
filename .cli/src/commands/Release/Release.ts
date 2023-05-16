@@ -21,6 +21,8 @@ export class Release extends Command {
     const cdn = packageJson?.template?.cdn as string;
     const user = packageJson?.template?.user as string;
     const update = this.major ? 'major' : this.minor ? 'minor' : this.patch ? 'patch' : 'patch';
+    const buildFlag =
+      update === 'major' ? 'M' : update === 'minor' ? 'm' : update === 'patch' ? 'p' : 'p';
     const wksp = getWorkspaces('@biggs-realty/chatbot-embed') as Workspace;
     const buildDir = join(wksp.path.dir, 'dist');
     const current = await getLatestTag();
@@ -52,7 +54,7 @@ export class Release extends Command {
     // Create the TXT file for embedding that release.
     writeFileSync(embedTxt, `<script type='module' src='${script}'></script>`);
 
-    await $$`yarn build`;
+    await $$`yarn build ${buildFlag}`;
     await $$`git fetch`;
     await $$`git add .`;
     await $$`git commit -m ${commit}`;
