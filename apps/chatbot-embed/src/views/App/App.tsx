@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Dialog } from 'components/Dialog';
 import { Logo } from 'components/Logo';
+import { Box } from 'components/Box';
 import { $ } from 'utils/classes';
 
 const styles = {
@@ -23,17 +24,26 @@ const styles = {
 };
 
 export const App: FC = () => {
+  const ref = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
   const handleOpen = (update: boolean) => {
     setOpen(update);
   };
+
+  useEffect(() => {
+    if (open) {
+      alert('OPEN!!!');
+    }
+  }, [open]);
 
   return (
     <Dialog onOpenChange={handleOpen} open={open}>
       <Dialog.Trigger className={styles.trigger}>
         <Logo className={styles.img} />
       </Dialog.Trigger>
-      <Dialog.Content>Hello Beau!</Dialog.Content>
+      <Dialog.Content>
+        <Box ref={ref} />
+      </Dialog.Content>
     </Dialog>
   );
 };
