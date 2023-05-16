@@ -2,6 +2,7 @@
   "name": "@biggs-realty/chatbot-embed",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && yarn cli build @biggs-realty/chatbot-embed --embeddable --patch",

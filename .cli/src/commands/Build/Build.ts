@@ -26,7 +26,7 @@ export class Build extends Command {
     const assets = readdirSync(assetsPath);
     const files = assets.map(file => parse(join(assetsPath, file)));
     const indexPath = join(distPath, 'index.js');
-    const removeAssets = ['index.html', 'manifest.json'];
+    const removeAssets = ['index.html', 'manifest.json', 'biggs-realty.png'];
 
     if (this.embeddable) {
       ensureFileSync(indexPath);

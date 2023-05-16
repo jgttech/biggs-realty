@@ -1,5 +1,9 @@
-.demo-shadow {
+.br-hover-shadow {
   @apply br-shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px];
+}
+
+.br-select-shadow {
+  @apply br-shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)];
 }
 
 @keyframes ripple {

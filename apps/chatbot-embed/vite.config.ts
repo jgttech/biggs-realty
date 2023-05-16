@@ -24,6 +24,7 @@ export default defineConfig({
       hooks: 'src/hooks',
       models: 'src/models',
       components: 'src/components',
+      public: 'public',
     }),
   },
   build: {

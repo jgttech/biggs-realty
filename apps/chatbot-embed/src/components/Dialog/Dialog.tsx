@@ -4,9 +4,7 @@ import { $ } from 'utils/classes';
 import { Trigger } from './Trigger';
 import { Content } from './Content';
 
-type DialogProps = {
-  children?: Children;
-};
+type DialogProps = RadixDialog.DialogProps;
 
 type DialogFC = FC<DialogProps> & {
   Trigger: FC<InferProps<typeof Trigger>>;
@@ -15,10 +13,10 @@ type DialogFC = FC<DialogProps> & {
 
 const styles = {
   overlay: $`
-    br-data-[state=open]:animate-dialog-overlay
+    data-[state=open]:br-animate-dialog-overlay
     br-fixed
     br-inset-0
-    br-bg-[rgb(0,_0,_0,_0.25)]
+    br-bg-[rgb(0,_0,_0,_0.2)]
   `,
 };
 

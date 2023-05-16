@@ -31,7 +31,8 @@
       "hooks": ["./src/hooks/index.ts"],
       "models/*": ["./src/models/*"],
       "models": ["./src/models/index.ts"],
-      "views/*": ["./src/views/*"]
+      "views/*": ["./src/views/*"],
+      "public/*": ["./public/*"]
     },
   },
   "include": ["src", "types"],

@@ -3,7 +3,7 @@ import { $ } from 'utils/classes';
 
 const styles = {
   content: $`
-    data-[state=open]:animate-dialog-content
+    data-[state=open]:br-animate-dialog-content
     br-fixed
     br-top-[50%]
     br-left-[50%]
@@ -32,66 +32,8 @@ const styles = {
   `,
 };
 
-const sizes = {
-  md: {
-    padding: $`
-      br-px-10
-      br-py-8
-    `,
-    title: $`
-      br-mb-7
-    `,
-    emblem: $``,
-    text: $`
-      br-text-lg
-    `,
-    description: $`
-      br-font-normal
-    `,
-  },
-  sm: {
-    padding: $`
-      br-px-6
-      br-py-5
-    `,
-    title: $`
-      br-mb-3.5
-    `,
-    emblem: $`
-      br-mr-1
-    `,
-    text: $`
-      br-text-lg
-    `,
-    description: $`
-      br-text-md
-      br-font-normal
-    `,
-  },
-  xs: {
-    padding: $`
-      br-px-5
-      br-py-4
-    `,
-    title: $`
-      br-mb-2.5
-    `,
-    emblem: $`
-      br-mr-0.5
-    `,
-    text: $`
-      br-text-md
-    `,
-    description: $`
-      br-text-sm
-      br-font-normal
-    `,
-  },
-};
-
 type ContentProps = RadixDialog.DialogContentProps & {
   description?: string;
-  size?: 'md' | 'xs' | 'sm';
   onClose?: () => void;
 };
 
@@ -100,26 +42,20 @@ export const Content: FC<ContentProps> = ({
   title,
   description,
   className,
-  size,
   onClose,
   ...props
 }) => {
-  size = size || 'md';
-  const sizing = sizes?.[size] || sizes.md;
-
   return (
-    <RadixDialog.Content {...props} className={$`${className} ${styles.content} ${sizing.padding}`}>
+    <RadixDialog.Content {...props} className={$`${className} ${styles.content} br-p-2`}>
       {!!title && (
-        <RadixDialog.Title className={$`br-flex br-font-light br-text-black ${sizing.title}`}>
-          Hello world!
+        <RadixDialog.Title className={$`br-flex br-font-light br-text-black`}>
+          {title}
         </RadixDialog.Title>
       )}
       {!!description && (
-        <RadixDialog.Description className={$`${sizing.title} br-text-xs`}>
-          Stuff and things!
-        </RadixDialog.Description>
+        <RadixDialog.Description className={$`br-text-xs`}>{description}</RadixDialog.Description>
       )}
-      <div className={$`${sizing.description}`}>{children}</div>
+      <div>{children}</div>
     </RadixDialog.Content>
   );
 };
