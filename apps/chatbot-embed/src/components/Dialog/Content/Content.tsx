@@ -46,7 +46,7 @@ export const Content: FC<ContentProps> = ({
   ...props
 }) => {
   return (
-    <RadixDialog.Content {...props} className={$`${className} ${styles.content} br-p-2`}>
+    <RadixDialog.Content {...props} className={$`${className} ${styles.content}`}>
       {!!title && (
         <RadixDialog.Title className={$`br-flex br-font-light br-text-black`}>
           {title}

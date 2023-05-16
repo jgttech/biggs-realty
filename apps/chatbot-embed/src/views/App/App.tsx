@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
 import { Dialog } from 'components/Dialog';
 import { Logo } from 'components/Logo';
 import { Box } from 'components/Box';
 import { $ } from 'utils/classes';
+import { zapier } from 'utils/zapier';
 
 const styles = {
   trigger: $`
@@ -24,25 +24,33 @@ const styles = {
 };
 
 export const App: FC = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [open, setOpen] = useState(false);
-  const handleOpen = (update: boolean) => {
-    setOpen(update);
+  const handleOpen = () => {
+    setTimeout(() => {
+      const body = document.getElementsByTagName('body')[0];
+      const content = document.querySelector('#biggs-realty-chatbox-content');
+
+      if (body && content) {
+        const script = zapier.script();
+        const embed = zapier.embed();
+
+        body.appendChild(script);
+        content.appendChild(embed);
+      }
+    }, 1);
+  };
+  const handleClose = () => {
+    console.log('CLOSE');
   };
 
-  useEffect(() => {
-    if (open) {
-      alert('OPEN!!!');
-    }
-  }, [open]);
-
   return (
-    <Dialog onOpenChange={handleOpen} open={open}>
-      <Dialog.Trigger className={styles.trigger}>
-        <Logo className={styles.img} />
+    <Dialog>
+      <Dialog.Trigger className={styles.trigger} asChild>
+        <button onClick={handleOpen}>
+          <Logo className={styles.img} />
+        </button>
       </Dialog.Trigger>
-      <Dialog.Content>
-        <Box ref={ref} />
+      <Dialog.Content id='biggs-realty-chatbox' onInteractOutside={handleClose}>
+        <Box id='biggs-realty-chatbox-content' />
       </Dialog.Content>
     </Dialog>
   );

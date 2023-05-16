@@ -23,18 +23,15 @@ const styles = {
 export const Dialog: DialogFC = ({ children }) => {
   const [DialogTrigger] = useComponents(children, [Trigger]);
   const [DialogContent] = useComponents(children, [Content]);
-  const hasRender = !!DialogTrigger && !!DialogContent;
 
   return (
-    hasRender && (
-      <RadixDialog.Root>
-        {DialogTrigger}
-        <RadixDialog.Portal>
-          <RadixDialog.Overlay className={styles.overlay} />
-          <>{DialogContent}</>
-        </RadixDialog.Portal>
-      </RadixDialog.Root>
-    )
+    <RadixDialog.Root>
+      {DialogTrigger}
+      <RadixDialog.Portal>
+        <RadixDialog.Overlay className={styles.overlay} />
+        <>{DialogContent}</>
+      </RadixDialog.Portal>
+    </RadixDialog.Root>
   );
 };
 
