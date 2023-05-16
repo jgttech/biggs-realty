@@ -2,7 +2,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       const body = document.getElementsByTagName('body')[0];
       const head = document.getElementsByTagName('head')[0];
-      const RAW_URL = `https://rawcdn.githack.com/jgttech/biggs-realty/1.0.0`;
+      const RAW_URL = `https://rawcdn.githack.com/jgttech/biggs-realty/1.0.1`;
       
       const css_0 = document.createElement('link');
       css_0.setAttribute('href', `${RAW_URL}/apps/chatbot-embed/dist/assets/index-2c0d0c66.css`);
