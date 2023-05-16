@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import logo from 'public/biggs-realty.png';
 import { Dialog } from 'components/Dialog';
+import { Logo } from 'components/Logo';
 import { $ } from 'utils/classes';
 
 const styles = {
@@ -31,7 +31,7 @@ export const App: FC = () => {
   return (
     <Dialog onOpenChange={handleOpen} open={open}>
       <Dialog.Trigger className={styles.trigger}>
-        <img src={logo} alt='Click' className={styles.img} />
+        <Logo className={styles.img} />
       </Dialog.Trigger>
       <Dialog.Content>Hello Beau!</Dialog.Content>
     </Dialog>

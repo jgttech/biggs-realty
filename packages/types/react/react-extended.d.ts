@@ -42,6 +42,7 @@ declare namespace Html {
   type Checkbox = BaseElement<React.InputHTMLAttributes<HTMLInputElement>>;
   type Span = BaseElement<React.HTMLAttributes<HTMLSpanElement>>;
   type Label = BaseElement<React.HTMLAttributes<HTMLLabelElement>>;
+  type Image = BaseElement<React.HTMLAttributes<HTMLImageElement>>;
 }
 
 /**
@@ -59,6 +60,7 @@ declare type Ref = {
   checkbox: HTMLInputElement;
   span: HTMLSpanElement;
   label: HTMLLabelElement;
+  img: HTMLImageElement;
 };
 
 declare namespace Tw {
