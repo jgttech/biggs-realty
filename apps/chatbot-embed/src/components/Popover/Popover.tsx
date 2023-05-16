@@ -1,6 +1,5 @@
 import * as RadixPopover from '@radix-ui/react-popover';
 import { useComponents } from 'hooks/useComponents';
-import { $ } from 'utils/classes';
 import { Trigger } from './Trigger';
 import { Content } from './Content';
 
