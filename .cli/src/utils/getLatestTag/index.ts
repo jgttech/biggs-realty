@@ -1,0 +1,1 @@
+export { getLatestTag } from './getLatestTag';

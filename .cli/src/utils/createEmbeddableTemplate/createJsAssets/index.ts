@@ -1,0 +1,1 @@
+export { createJsAssets } from './createJsAssets';

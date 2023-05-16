@@ -1,0 +1,73 @@
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Swap the comments on the following lines if you don't wish to use zero-installs
+# Documentation here: https://yarnpkg.com/features/zero-installs
+!.yarn/cache
+#.pnp.*
+
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Swap the comments on the following lines if you don't wish to use zero-installs
+# Documentation here: https://yarnpkg.com/features/zero-installs
+!.yarn/cache
+#.pnp.*
+
+# dependencies
+node_modules
+
+# testing
+coverage
+
+# next.js
+.next/
+out/
+
+# remix-js
+.cache
+build
+public/build
+
+
+# bundles
+_dist/
+.dist/
+dist/
+!.cli/dist
+!apps/chatbot-embed/dist
+!.cli/src/commands/*
+
+# misc
+.DS_Store
+*.pem
+bundles
+!packages/yarn-plugin-cli/bundles
+.init
+.cli/.metadata.json
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# turbo
+.turbo
+.env
+!services/mongo/.env
+.npmrc

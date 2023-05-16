@@ -1,0 +1,1 @@
+export { createEmbeddableTemplate } from './createEmbeddableTemplate';

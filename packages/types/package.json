@@ -1,0 +1,13 @@
+{
+  "name": "@types/biggs-realty",
+  "version": "3.0.0",
+  "private": true,
+  "scripts": {
+    "clean": "yarn dlx rimraf node_modules .turbo",
+    "lint": "run-s lint:prettier",
+    "lint:prettier": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  }
+}

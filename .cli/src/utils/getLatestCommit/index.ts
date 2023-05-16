@@ -1,0 +1,1 @@
+export { getLatestCommit } from './getLatestCommit';

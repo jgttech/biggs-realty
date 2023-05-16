@@ -1,0 +1,34 @@
+{
+  "packageManager": "yarn@3.5.1",
+  "name": "biggs-realty",
+  "version": "0.0.1",
+  "private": true,
+  "template": {
+    "cdn": "https://rawcdn.githack.com",
+    "user": "jgttech"
+  },
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "release": "yarn cli release jgttech biggs-realty"
+  },
+  "engines": {
+    "node": ">=18.15.0",
+    "npm": ">=9.6.1"
+  },
+  "workspaces": [
+    ".cli",
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@biggs-realty/cli": "*",
+    "@types/eslint": "^8.37.0",
+    "@types/prettier": "^2",
+    "eslint": "^8.40.0",
+    "github-release-cli": "^2.1.0",
+    "prettier": "^2.8.8",
+    "turbo": "latest",
+    "typescript": "^5.0.4"
+  }
+}

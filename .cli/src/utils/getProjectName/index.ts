@@ -1,0 +1,1 @@
+export { getProjectName } from './getProjectName';
