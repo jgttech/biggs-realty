@@ -77,7 +77,7 @@ export const PopoverChat: FC = () => {
   useEffect(() => {
     setTimeout(() => {
       setVisible(true);
-    }, 29000);
+    }, 1);
   }, []);
 
   return (
@@ -103,7 +103,7 @@ export const PopoverChat: FC = () => {
                 </button>
               </Popover.Trigger>
               <Popover.Content
-                className='br-min-w-[400px] br-max-w-[500px] br-rounded-lg br-p-1 br-bg-white'
+                className='br-min-w-[400px] br-max-w-[500px] br-rounded-lg br-p-1 br-bg-white br-z-10'
                 id='biggs-realty-chatbox'
                 side='top'
                 align='end'
