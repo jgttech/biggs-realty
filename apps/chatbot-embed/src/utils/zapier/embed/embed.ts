@@ -6,6 +6,9 @@ export const embed = () => {
 
   element.style.maxWidth = '900px';
   element.style.height = '500px';
+  element.style.display = 'block';
+  element.style.position = 'relative';
+  element.style.zIndex = '11';
 
   return element;
 };

@@ -77,7 +77,7 @@ export const PopoverChat: FC = () => {
   useEffect(() => {
     setTimeout(() => {
       setVisible(true);
-    }, 1);
+    }, 3000);
   }, []);
 
   return (
