@@ -4,6 +4,9 @@ module.exports = {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
+      colors: {
+        'br-logo-blue': 'hsl(224, 99%, 28%)',
+      },
       keyframes: {
         'dialog-overlay': {
           from: { opacity: 0 },

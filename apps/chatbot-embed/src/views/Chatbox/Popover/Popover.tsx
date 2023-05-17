@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Popover } from 'components/Popover';
 import { Logo } from 'components/Logo';
 import { Box } from 'components/Box';
@@ -21,9 +23,18 @@ const styles = {
     hover:br-w-14
     hover:br-h-14
   `,
+  button: $`
+    br-flex
+    br-justify-center
+    br-items-center
+    br-bg-br-logo-blue
+    br-text-white
+    br-pr-4
+  `,
 };
 
 export const PopoverChat: FC = () => {
+  const [visible, setVisible] = useState(false);
   const handleOpen = () => {
     setTimeout(() => {
       const body = document.getElementsByTagName('body')[0];
@@ -39,22 +50,47 @@ export const PopoverChat: FC = () => {
     }, 1);
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      setVisible(true);
+    }, 29000);
+  }, []);
+
+  console.log('>>> visible:', visible);
+
   return (
-    <Popover>
-      <Popover.Trigger className={styles.trigger} asChild>
-        <button onClick={handleOpen}>
-          <Logo className={styles.img} />
-        </button>
-      </Popover.Trigger>
-      <Popover.Content
-        className='br-min-w-[400px] br-max-w-[500px] br-rounded-lg br-p-1'
-        id='biggs-realty-chatbox'
-        side='top'
-        align='end'
-        sideOffset={14}
-      >
-        <Box id='biggs-realty-chatbox-content' />
-      </Popover.Content>
-    </Popover>
+    <AnimatePresence mode='wait'>
+      {visible && (
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+            transition: {
+              duration: 1,
+            },
+          }}
+        >
+          <Popover>
+            <Popover.Trigger className={styles.trigger} asChild>
+              <button onClick={handleOpen} className={styles.button}>
+                <Logo className={styles.img} />
+                Client Support
+              </button>
+            </Popover.Trigger>
+            <Popover.Content
+              className='br-min-w-[400px] br-max-w-[500px] br-rounded-lg br-p-1'
+              id='biggs-realty-chatbox'
+              side='top'
+              align='end'
+              sideOffset={14}
+            >
+              <Box id='biggs-realty-chatbox-content' />
+            </Popover.Content>
+          </Popover>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
