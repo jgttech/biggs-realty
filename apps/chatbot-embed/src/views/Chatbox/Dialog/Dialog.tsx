@@ -16,6 +16,11 @@ const styles = {
   img: $`
     br-h-6
   `,
+  content: $`
+    br-rounded-lg
+    br-p-1
+    br-z-10
+  `,
   button: $`
     br-px-5
     br-py-3
@@ -80,7 +85,7 @@ export const DialogChat: FC = () => {
           Client Support
         </button>
       </Dialog.Trigger>
-      <Dialog.Content id='biggs-realty-chatbox' className='br-rounded-lg br-p-1'>
+      <Dialog.Content id='biggs-realty-chatbox' className={styles.content}>
         <Box id='biggs-realty-chatbox-content' />
         <button onClick={handleClose} style={{ zIndex: '11' }} className={styles.closeButton}>
           <Cross2Icon />

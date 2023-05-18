@@ -2,7 +2,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       const body = document.getElementsByTagName('body')[0];
       const head = document.getElementsByTagName('head')[0];
-      const RAW_URL = `https://rawcdn.githack.com/jgttech/biggs-realty/1.1.6`;
+      const RAW_URL = `https://rawcdn.githack.com/jgttech/biggs-realty/1.1.7`;
       
       const css_0 = document.createElement('link');
       css_0.setAttribute('href', `${RAW_URL}/apps/chatbot-embed/dist/assets/index-4cbac400.css`);
@@ -10,7 +10,7 @@
     
       
       const js_0 = document.createElement('script');
-      js_0.setAttribute('src', `${RAW_URL}/apps/chatbot-embed/dist/assets/index-cbfff17c.js`);
+      js_0.setAttribute('src', `${RAW_URL}/apps/chatbot-embed/dist/assets/index-c3cc7e57.js`);
       js_0.setAttribute('type', 'module');
     
       head.appendChild(css_0);
