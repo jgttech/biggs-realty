@@ -152,7 +152,8 @@ Error generating stack: `+i.message+`
   `,content:le`
     br-rounded-lg
     br-p-1
-    br-z-10
+    br-z-[9999]
+    br-bg-white
   `,button:le`
     br-px-5
     br-py-3
@@ -221,7 +222,7 @@ Error generating stack: `+i.message+`
     br-max-w-[500px]
     br-rounded-lg
     br-p-1
-    br-z-10
+    br-z-[9999]
     br-bg-white
   `,closeButton:le`
     br-absolute

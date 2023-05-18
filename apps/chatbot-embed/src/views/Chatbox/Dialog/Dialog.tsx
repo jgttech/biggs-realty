@@ -19,7 +19,8 @@ const styles = {
   content: $`
     br-rounded-lg
     br-p-1
-    br-z-10
+    br-z-[9999]
+    br-bg-white
   `,
   button: $`
     br-px-5

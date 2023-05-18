@@ -35,7 +35,7 @@ const styles = {
     br-max-w-[500px]
     br-rounded-lg
     br-p-1
-    br-z-10
+    br-z-[9999]
     br-bg-white
   `,
   closeButton: $`
