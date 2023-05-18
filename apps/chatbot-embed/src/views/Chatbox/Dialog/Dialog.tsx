@@ -29,6 +29,7 @@ const styles = {
     br-flex
     br-justify-center
     br-items-center
+    br-z-[9998]
     br-text-white
     br-bg-br-logo-blue
     br-transition-all
