@@ -85,7 +85,11 @@ export const DialogChat: FC = () => {
           Client Support
         </button>
       </Dialog.Trigger>
-      <Dialog.Content id='biggs-realty-chatbox' className={styles.content}>
+      <Dialog.Content
+        id='biggs-realty-chatbox'
+        className={styles.content}
+        onInteractOutside={handleClose}
+      >
         <Box id='biggs-realty-chatbox-content' />
         <button onClick={handleClose} style={{ zIndex: '11' }} className={styles.closeButton}>
           <Cross2Icon />
