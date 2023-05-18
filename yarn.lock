@@ -373,6 +373,7 @@ __metadata:
     "@radix-ui/react-dialog": ^1.0.3
     "@radix-ui/react-dropdown-menu": ^2.0.4
     "@radix-ui/react-popover": ^1.0.5
+    "@react-hook/media-query": ^1.1.1
     "@remix-run/eslint-config": ^1.16.0
     "@types/biggs-realty": "*"
     "@types/eslint": ^8
@@ -1407,6 +1408,15 @@ __metadata:
   dependencies:
     "@babel/runtime": ^7.13.10
   checksum: d5b54984148ac52e30c6a92834deb619cf74b4af02709a20eb43e7895f98fed098968b597a715bf5b5431ae186372e65499a801d93e835f53bbc39e3a549f664
+  languageName: node
+  linkType: hard
+
+"@react-hook/media-query@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@react-hook/media-query@npm:1.1.1"
+  peerDependencies:
+    react: ">=16.8"
+  checksum: 141d271789250e2703329f94486b7c866b9cf44a79a6c347cbacdf07f1d480adb0841d297dd1a87e310afb44173811e117cf03bdc92043e360752246553c619d
   languageName: node
   linkType: hard
 

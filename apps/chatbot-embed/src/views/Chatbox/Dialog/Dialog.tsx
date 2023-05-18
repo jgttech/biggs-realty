@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { Cross2Icon } from '@radix-ui/react-icons';
 import { Dialog } from 'components/Dialog';
 import { Logo } from 'components/Logo';
 import { Box } from 'components/Box';
@@ -12,19 +14,47 @@ const styles = {
     br-rounded-full
   `,
   img: $`
-    br-rounded-full
-    br-w-12
-    br-h-12
-
+    br-h-6
+  `,
+  button: $`
+    br-px-5
+    br-py-3
+    br-gap-3
+    br-flex
+    br-justify-center
+    br-items-center
+    br-text-white
+    br-bg-br-logo-blue
     br-transition-all
     br-duration-500
-    hover:br-w-14
-    hover:br-h-14
+    hover:br-px-6
+    hover:br-py-4
+  `,
+  closeButton: $`
+    br-absolute
+    br-right-4
+    br-top-4
+    br-p-2
+    br-w-8
+    br-h-8
+    br-flex
+    br-justify-center
+    br-items-center
+    br-cursor-pointer
+    br-rounded-full
+    br-bg-br-logo-blue
+    br-text-white
+    br-transition-all
+    br-duration-500
+    hover:br-w-9
+    hover:br-h-9
   `,
 };
 
 export const DialogChat: FC = () => {
+  const [open, setOpen] = useState(false);
   const handleOpen = () => {
+    setOpen(true);
     setTimeout(() => {
       const body = document.getElementsByTagName('body')[0];
       const content = document.querySelector('#biggs-realty-chatbox-content');
@@ -38,16 +68,23 @@ export const DialogChat: FC = () => {
       }
     }, 1);
   };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
-    <Dialog>
+    <Dialog open={open}>
       <Dialog.Trigger className={styles.trigger} asChild>
-        <button onClick={handleOpen}>
+        <button onClick={handleOpen} className={styles.button}>
           <Logo className={styles.img} />
+          Client Support
         </button>
       </Dialog.Trigger>
       <Dialog.Content id='biggs-realty-chatbox' className='br-rounded-lg br-p-1'>
         <Box id='biggs-realty-chatbox-content' />
+        <button onClick={handleClose} style={{ zIndex: '11' }} className={styles.closeButton}>
+          <Cross2Icon />
+        </button>
       </Dialog.Content>
     </Dialog>
   );

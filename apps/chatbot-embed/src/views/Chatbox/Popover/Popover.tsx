@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
-import { Portal } from 'react-portal';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 import { Cross2Icon } from '@radix-ui/react-icons';
 import { Popover } from 'components/Popover';
 import { Logo } from 'components/Logo';
@@ -16,45 +14,53 @@ const styles = {
     br-rounded-full
   `,
   img: $`
-    br-rounded-full
-    br-w-12
-    br-h-12
-
-    br-transition-all
-    br-duration-500
-    hover:br-w-14
-    hover:br-h-14
+    br-h-6
   `,
   button: $`
+    br-px-5
+    br-py-3
+    br-gap-3
     br-flex
     br-justify-center
     br-items-center
-    br-bg-br-logo-blue
     br-text-white
-    br-pr-4
+    br-bg-br-logo-blue
+    br-transition-all
+    br-duration-500
+    hover:br-px-6
+    hover:br-py-4
   `,
-  icon: $`
+  content: $`
+    br-min-w-[400px]
+    br-max-w-[500px]
+    br-rounded-lg
+    br-p-1
+    br-z-10
+    br-bg-white
+  `,
+  closeButton: $`
     br-absolute
     br-top-[-2.5rem]
     br-right-0
     br-p-2
     br-w-8
     br-h-8
-    br-transition-all
-    br-duration-300
-    hover:br-w-9
-    hover:br-h-9
-    hover:br-bg-blue-500
+    br-flex
+    br-justify-center
+    br-items-center
     br-cursor-pointer
     br-rounded-full
     br-bg-br-logo-blue
     br-text-white
+    br-transition-all
+    br-duration-500
+    hover:br-w-9
+    hover:br-h-9
   `,
 };
 
 export const PopoverChat: FC = () => {
   const [open, setOpen] = useState(false);
-  const [visible, setVisible] = useState(false);
   const handleOpen = () => {
     setOpen(true);
     setTimeout(() => {
@@ -74,49 +80,27 @@ export const PopoverChat: FC = () => {
     setOpen(false);
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      setVisible(true);
-    }, 3000);
-  }, []);
-
   return (
-    <Portal>
-      <AnimatePresence mode='wait'>
-        {visible && (
-          <motion.div
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-              transition: {
-                duration: 1,
-              },
-            }}
-          >
-            <Popover open={open}>
-              <Popover.Trigger className={styles.trigger} asChild>
-                <button onClick={handleOpen} className={styles.button}>
-                  <Logo className={styles.img} />
-                  Client Support
-                </button>
-              </Popover.Trigger>
-              <Popover.Content
-                className='br-min-w-[400px] br-max-w-[500px] br-rounded-lg br-p-1 br-bg-white br-z-10'
-                id='biggs-realty-chatbox'
-                side='top'
-                align='end'
-                sideOffset={14}
-                onInteractOutside={handleClose}
-              >
-                <Box id='biggs-realty-chatbox-content' />
-                <Cross2Icon className={styles.icon} onClick={handleClose} />
-              </Popover.Content>
-            </Popover>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </Portal>
+    <Popover open={open}>
+      <Popover.Trigger className={styles.trigger} asChild>
+        <button onClick={handleOpen} className={styles.button}>
+          <Logo className={styles.img} />
+          Client Support
+        </button>
+      </Popover.Trigger>
+      <Popover.Content
+        className={styles.content}
+        id='biggs-realty-chatbox'
+        side='top'
+        align='end'
+        sideOffset={14}
+        onInteractOutside={handleClose}
+      >
+        <Box id='biggs-realty-chatbox-content' />
+        <button onClick={handleClose} className={styles.closeButton}>
+          <Cross2Icon />
+        </button>
+      </Popover.Content>
+    </Popover>
   );
 };

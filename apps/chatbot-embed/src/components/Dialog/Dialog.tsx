@@ -20,12 +20,12 @@ const styles = {
   `,
 };
 
-export const Dialog: DialogFC = ({ children }) => {
+export const Dialog: DialogFC = ({ children, ...props }) => {
   const [DialogTrigger] = useComponents(children, [Trigger]);
   const [DialogContent] = useComponents(children, [Content]);
 
   return (
-    <RadixDialog.Root>
+    <RadixDialog.Root {...props}>
       {DialogTrigger}
       <RadixDialog.Portal>
         <RadixDialog.Overlay className={styles.overlay} />
